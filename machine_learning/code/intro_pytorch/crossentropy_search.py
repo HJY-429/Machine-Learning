@@ -107,8 +107,8 @@ def crossentropy_parameter_search(
 
     # train parameters
     batches = 32
-    epochs = 150
-    lr = 0.01
+    epochs = 100
+    lr = 0.005
     train_data = DataLoader(dataset_train, batches, shuffle=True)
     val_data = DataLoader(dataset_val, batches)
 
@@ -201,7 +201,7 @@ def main():
     plt.title("CrossEntropy Loss for Different Model Architectures", fontdict=dict(size=16))
     plt.legend(fontsize=10)
     plt.grid(True)
-    plt.savefig("CrossEntropy Loss for Different Model Architectures.pdf")
+    # plt.savefig("CrossEntropy Loss for Different Model Architectures.pdf")
     plt.show()
 
     # 3. Choose and report the best model configuration based on validation losses

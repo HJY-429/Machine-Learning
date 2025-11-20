@@ -138,9 +138,9 @@ def mse_parameter_search(
     }
 
     # train parameters
-    batches = 32
-    epochs = 150
-    lr = 0.01
+    batches = 16
+    epochs = 100
+    lr = 0.005
     train_data = DataLoader(dataset_train, batches, shuffle=True)
     val_data = DataLoader(dataset_val, batches)
 
@@ -197,8 +197,8 @@ def main():
     # 2. Plot Train and Validation losses for each model all on single plot
     plt.figure(figsize=(10, 6))
     for name, config in mse_configs.items():
-        plt.plot(config["train"], '-o', markersize=3, linewidth=2, label=f"{name} (Train)")
-        plt.plot(config["val"], '--o', markersize=3, linewidth=2, label=f"{name} (Val)")
+        plt.plot(config["train"], '-o', markersize=2, linewidth=2, label=f"{name} (Train)")
+        plt.plot(config["val"], '--o', markersize=2, linewidth=2, label=f"{name} (Val)")
     plt.xlabel("epochs", fontdict=dict(size=12))
     plt.ylabel("MSE loss", fontdict=dict(size=12))
     plt.title("MSE Loss for Different Model Architectures", fontdict=dict(size=16))
